@@ -33,7 +33,7 @@ const Navbar = () => {
           onClick={handleLogout} 
           to="/home"
           className="bg-red-900 text-white font-bold py-2 px-6 rounded-md hover:bg-red-950"
-          >
+        >
           Log Out
         </Link>
       </div>

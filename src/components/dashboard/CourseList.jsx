@@ -8,7 +8,7 @@ const CourseList = ({ courses = [] }) => {
         <div key={index} className="bg-zinc-100 rounded-lg shadow-md overflow-hidden flex flex-col h-full">
           <div className="h-48 bg-gray-200">
             <img
-              src={title}
+              src={`/api/placeholder/400/200`}
               alt={course.title}
               className="w-full h-full object-cover"
             />
