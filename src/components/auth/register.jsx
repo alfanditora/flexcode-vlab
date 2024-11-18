@@ -1,4 +1,3 @@
-// src/components/auth/register.jsx
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -41,10 +40,10 @@ export default function Register() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-600 to-zinc-700 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white rounded-xl shadow-lg p-10">
         <div>
-          <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-center text-3xl font-extrabold text-red-900 mb-4">
             Create an account
           </h2>
         </div>
@@ -105,7 +104,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-800 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-900 hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               {loading ? 'Creating account...' : 'Sign up'}
             </button>
@@ -113,7 +112,7 @@ export default function Register() {
 
           <div className="flex items-center justify-between mt-6">
             <div className="text-sm">
-              <Link to="/login" className="font-medium text-indigo-800 hover:text-indigo-900">
+              <Link to="/login" className="font-medium text-red-900 hover:text-indigo-900">
                 Already have an account? Sign in
               </Link>
             </div>

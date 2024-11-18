@@ -15,25 +15,25 @@ const StatsOverview = ({ stats }) => {
       icon: BookOpen,
       label: 'Courses Completed',
       value: defaultStats.completedCourses,
-      color: 'bg-blue-500'
+      color: 'bg-stone-900'
     },
     {
       icon: Trophy,
-      label: 'Quests Completed',
+      label: 'Your Achievement',
       value: defaultStats.completedQuests,
-      color: 'bg-green-500'
+      color: 'bg-teal-950'
     },
     {
       icon: Star,
       label: 'Total Points',
       value: defaultStats.totalPoints,
-      color: 'bg-yellow-500'
+      color: 'bg-red-950'
     },
     {
       icon: Timer,
-      label: 'Hours Learned',
+      label: 'Your Level',
       value: defaultStats.hoursLearned,
-      color: 'bg-purple-500'
+      color: 'bg-zinc-600'
     }
   ];
 
@@ -44,11 +44,11 @@ const StatsOverview = ({ stats }) => {
         return (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md p-6"
+            className="bg-zinc-100 rounded-lg shadow-md p-6"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500 text-sm">{item.label}</p>
+                <p className="text-red-900 text-md font-bold">{item.label}</p>
                 <p className="text-2xl font-bold mt-1">{item.value}</p>
               </div>
               <div className={`${item.color} p-3 rounded-lg`}>

@@ -13,7 +13,7 @@ const getInitials = (email) => {
   
     return (
       <div
-        className={`${sizeClasses[size]} rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold`}
+        className={`${sizeClasses[size]} rounded-full bg-teal-900 text-white flex items-center justify-center font-semibold`}
       >
         {initials}
       </div>

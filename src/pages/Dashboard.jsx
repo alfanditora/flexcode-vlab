@@ -6,6 +6,7 @@ import Leaderboard from '../components/dashboard/Leaderboard';
 import { useAuth } from '../contexts/AuthContext';
 import Avatar from '../components/Avatar';
 import Navbar from '../components/NavBar';
+import GameList from '../components/dashboard/GameList';
 
 const DashboardOverview = () => {
   const { currentUser } = useAuth();
@@ -31,20 +32,6 @@ const DashboardOverview = () => {
       level: "Intermediate",
       duration: "15m",
       lessons: 15
-    },
-    {
-      title: "Data Structures & Algorithms",
-      description: "Advanced concepts in DSA",
-      level: "Advanced",
-      duration: "25m",
-      lessons: 20
-    },
-    {
-      title: "Data Structures & Algorithms",
-      description: "Advanced concepts in DSA",
-      level: "Advanced",
-      duration: "25m",
-      lessons: 20
     }
   ];
 
@@ -64,6 +51,23 @@ const DashboardOverview = () => {
       xp: 750,
       rewards: 150,
       locked: false
+    }
+  ];
+
+  const games = [
+    {
+      title: "Wumpus Worlds!",
+      description: "Solve the wumpus worlds",
+      level: "Intermediate",
+      duration: "15m",
+      points: 200
+    },
+    {
+      title: "Escape Maze",
+      description: "Escape the maze!",
+      level: "Beginner",
+      duration: "15m",
+      points: 150
     }
   ];
 
@@ -101,16 +105,16 @@ const DashboardOverview = () => {
   return (
     <div>
     <Navbar />
-    <div className="mt-20 p-6">
+    <div className="bg-white mt-20 p-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center space-y-4 mb-8">
           <Avatar email={currentUser?.email} size="lg" />
   
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold text-teal-950">
             Welcome, {currentUser?.email.split('@')[0]}!
           </h1>
   
-          <p className="text-l text-gray-500">
+          <p className="text-l text-red-900">
             Your personal dashboard to track progress, complete quests, and view courses.
           </p>
         </div>
@@ -119,18 +123,23 @@ const DashboardOverview = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="text-2xl font-semibold mb-4">My Courses</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-teal-950">My Courses</h2>
               <CourseList courses={courses} />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4 text-teal-950">Play Games</h2>
+              <GameList games={games} />
             </div>
   
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Quests</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-teal-950">Achievement</h2>
               <QuestList quests={quests} />
             </div>
           </div>
   
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Leaderboard</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-teal-950">Leaderboard</h2>
             <Leaderboard users={leaderboardUsers} />
           </div>
         </div>

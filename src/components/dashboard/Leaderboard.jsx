@@ -73,8 +73,8 @@ const Leaderboard = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="p-6 bg-indigo-900 flex items-center space-x-2">
+    <div className="bg-zinc-100 rounded-lg shadow-md overflow-hidden">
+      <div className="p-6 bg-red-900 flex items-center space-x-2">
         <Trophy className="text-yellow-500" size={24} />
         <h2 className="text-xl font-semibold text-white">Top performers</h2>
       </div>
