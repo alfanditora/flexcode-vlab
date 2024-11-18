@@ -7,6 +7,7 @@ import { useAuth } from '../contexts/AuthContext';
 import Avatar from '../components/Avatar';
 import Navbar from '../components/NavBar';
 import GameList from '../components/dashboard/GameList';
+import DailyQuest from '../components/dashboard/DailyQuest';
 
 const DashboardOverview = () => {
   const { currentUser } = useAuth();
@@ -104,49 +105,56 @@ const DashboardOverview = () => {
 
   return (
     <div>
-    <Navbar />
-    <div className="bg-white mt-20 p-6">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col items-center justify-center text-center space-y-4 mb-8">
-          <Avatar email={currentUser?.email} size="lg" />
-  
-          <h1 className="text-4xl font-bold text-teal-950">
-            Welcome, {currentUser?.email.split('@')[0]}!
-          </h1>
-  
-          <p className="text-l text-red-900">
-            Your personal dashboard to track progress, complete quests, and view courses.
-          </p>
-        </div>
-        <StatsOverview stats={stats} />
-  
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-teal-950">My Courses</h2>
-              <CourseList courses={courses} />
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-teal-950">Play Games</h2>
-              <GameList games={games} />
-            </div>
-  
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-teal-950">Achievement</h2>
-              <QuestList quests={quests} />
-            </div>
+      <Navbar />
+      <div className="bg-white mt-20 p-6">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col items-center justify-center text-center space-y-4 mb-8">
+            <Avatar email={currentUser?.email} size="lg" />
+    
+            <h1 className="text-4xl font-bold text-teal-950">
+              Welcome, {currentUser?.email.split('@')[0]}!
+            </h1>
+    
+            <p className="text-l text-red-900">
+              Your personal dashboard to track progress, complete quests, and view courses.
+            </p>
           </div>
+          <StatsOverview stats={stats} />
+    
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+            <div className="lg:col-span-2 space-y-8">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-teal-950">My Courses</h2>
+                <CourseList courses={courses} />
+              </div>
   
-          <div>
-            <h2 className="text-2xl font-semibold mb-4 text-teal-950">Leaderboard</h2>
-            <Leaderboard users={leaderboardUsers} />
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-teal-950">Play Games</h2>
+                <GameList games={games} />
+              </div>
+    
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-teal-950">Achievement</h2>
+                <QuestList quests={quests} />
+              </div>
+            </div>
+  
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-teal-950">Daily Quest</h2>
+                <DailyQuest />
+              </div>
+    
+              <div>
+                <h2 className="text-2xl font-semibold mb-4 text-teal-950">Leaderboard</h2>
+                <Leaderboard users={leaderboardUsers} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  );
-};
+    );
+  };
 
-export default DashboardOverview
+export default DashboardOverview;
